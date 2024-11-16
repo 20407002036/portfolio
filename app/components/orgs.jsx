@@ -3,11 +3,10 @@ import Image from "next/image";
 import { getUserOrganizations } from "../data";
 
 export const ProfileOrganizations = async ({ username }) => {
-
-	const organizations = (await getUserOrganizations(username)).data.user?.organizations.nodes;
-
+	const organizations = (await getUserOrganizations(username)).data?.user?.organizations?.nodes;
+	console.log(organizations);
 	return (
-		<p>I'm building stuff{
+		<p>I'm a Junior Software Engineer at SunPro Systems Ltd{
 			organizations?.length > 0 ? <>
 				{" "}at{" "}
 				<span className="mt-3 overflow-hidden">
